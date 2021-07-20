@@ -1,0 +1,64 @@
+PRINCIPAIS COMANDOS GIT   --Artigo para ler: https://blog.pronus.io/posts/controle-de-versao/conceitos-basicos-de-controle-de-versao-de-software-centralizado-e-distribuido/
+
+CONFIGURANDO O GIT
+	GIT CONFIG --LOCAL USER.NAME "NOME DO USUÁRIO" 	<-- coloca o nome do usuario no git para o usuario local. é possivel alterar o usuario para a maquina alterando o parametro local para global.
+	GIT CONFIG --LOCAL USER.EMAIL "E-MAIL@DOUSUARIO" <--  idem acima
+
+INICIANDO UM REPOSITORIO LOCAL
+	GIT INIT					<-- define a pasta atual como repositorio local.
+
+VERIFICANDO STATUS:
+	GIT STATUS 					<-- Verifica no diretorio local se há alterações.
+
+MONITORANDO ARQUIVOS
+	GIT ADD ARQUIVO.TXT <-- comando para adicionar arquivo ao monitoramento do git (toda vez que altera o arquivo é necessário refazer esse comando)
+	GIT ADD . 					<-- comando para adicionar TODOS os arquivos do diretorio para monitoramento
+	GIT RM ARQUIVO.TXT				<-- remove o arquivo do monitoramento.
+
+IGNORANDO ARQUIVOS
+	Para fazer com que o git ignore arquivos ou diretorio é necessário criar o arquivo .gitignore e dentro dele colocar os nomes dos arquivos ou diretorios (/diretorio) que não vão ser monitorados. após isso adicionar o monitoramento do gitignore.
+
+SALVANDO ALTERAÇÕES
+	GIT COMMIT -M "ANOTAÇÃO SOBRE A MODIFICAÇÃO" 	<-- Commita o arquivo e salva a anotação sobre o commit
+
+VERIFICANDO OS COMMITS					<-- documentação para opções http://devhints.io/git-log
+	GIT LOG 					<-- mostra o log com todos os comits
+	GIT LOG ONELINE 				<-- mostra um log por linha.
+	GIT LOG -P 					<--mostra os logs detalhados.
+
+ADICIONANDO REPOSITORIO PARA ARMAZENAR ALTERAÇÕES DE TODOS
+	GIT INIT --BARE  				<-- caso o repositorio seja local (ou rede) o diretorio ira armazenar somente as ALTERAÇÕES dos arquivos. 
+	GIT REMOTE 					<-- lista os repositorios remotos presentes em um diretorio (comando deve ser feito no diretorio de trabalho)
+	GIT REMOTE ADD LOCAL C:\SERVIDOR		<-- adiciona um repositorio remoto a um diretorio. "LOCAL" E "c:/SERVIDOR" são parametros a serem colocados onde o primeiro é o apelido e o segundo é o caminho (podemos adicionar o link do github).
+	GIT REMOTE -V					<-- lista os respositorios e os caminhos.
+
+CLONANDO ARQUIVOS
+	GIT CLONE C:\SERVIDOR				<-- Clona para o diretorio atual a estrutura apontada.
+
+SINCRONIZANDO DADOS
+	GIT PUSH LOCAL MASTER				<-- Joga todas as alterações locais para o repositorio, onde "local" é o repositorio remoto e master é a branch de trabalho.
+	GIT PULL LOCAL MASTER				<-- Copia as alterações do repositorio remoto "local" da branch apontada para o diretorio atual.
+
+BRANCHES						<-- simulador em grafico dos branches http://git-school.github.io/visualizing-git
+	GIT BRANCH					<-- Lista as branches disponiveis.
+	GIT BRANCH NOMEBRANCH				<-- cria uma nova branch
+	GIT CHECKOUT NOMEBRANCH				<-- altera a branch de trabalho.
+	
+
+TRABALHANDO EM EQUIPE
+	GIT MERGE TITULO 				<-- faz o merge de duas branches para a branche atual que voce esta.
+	GIT REBASE TITULO				<-- traz os commits  de um branch para o outro.
+
+DESFAZENDO AS COISAS
+	GIT CHECKOUT -- ARQUIVO.TXT			<-- control z puxando o ultimo commit.
+	GIT RESET HEAD ARQUIVO.TXT			<-- desfaz o arquivo pronto para commitar.
+	GIT REVERT 21332132131				<-- traz o estado da hash do commit
+	GIT STASH 					<-- cria um "rascunho" de uma alteração qualquer.
+	GIT STASH LIST					<-- mostra rascunhos 
+	GIT STASH APPLY 0				<-- puxa alterações daquele rascunho
+	GIT STASH DROP					<-- exclui o rascunho
+	GIT STASH POP					<-- exclui o rascunho e aplica.
+	GIT CHECKOUT 234213213				<-- volta para um ponto especifico do commit de um arquivo onde os numeros são o hash do commit (atentar que fazer isso cria uma branch fantasma).
+	
+	
+
