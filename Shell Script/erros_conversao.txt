@@ -1,0 +1,3 @@
+conversao-jpg-png.sh: linha 4: cd: /home/pablo/Downloads/imagens-livro: Arquivo ou diretório inexistente
+ls: não foi possível acessar '*.jpg': Arquivo ou diretório inexistente
+convert convert: Unable to open file (.jpg) [Arquivo ou diretório inexistente].
