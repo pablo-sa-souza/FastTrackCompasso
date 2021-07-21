@@ -59,6 +59,13 @@ DESFAZENDO AS COISAS
 	GIT STASH DROP					<-- exclui o rascunho
 	GIT STASH POP					<-- exclui o rascunho e aplica.
 	GIT CHECKOUT 234213213				<-- volta para um ponto especifico do commit de um arquivo onde os numeros são o hash do commit (atentar que fazer isso cria uma branch fantasma).
-	
-	
+
+VENDO AS DIFERENÇAS
+	GIT DIFF 321332..2123213			<-- colocar dois hashs entre .. mostra na tela as diferenças entre as versões.
+
+TAGS E VERSÕES
+	GIT TAG -A v0.1 -m "texto'			<-- cria uma release do codigo (um marco)
+
+
+
 
