@@ -1,0 +1,3 @@
+DAG = grafico aciclico dirigido. (não tem ciclos)
+
+OPERATORS = é uma tarefa em um DAG.
