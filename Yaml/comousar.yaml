@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: Giropops
+  labels:
+    app: Strigus
+sepc:
+  containers:
+    - name: Linuxtips
+      image: nginx
+      ports:
+        - containerPort: 80
+    - name: Eduardo
+      image: bl
+      ports:
+        - containerPort: 8080
+      args: |
+        testando
+        sdsd
+spec:
+  containers:
